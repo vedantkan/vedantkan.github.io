@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Vedant Kansara</title>
+<meta name="description" content="Selected publications of Vedant Kansara: EEG markers of consciousness, clinical prediction models, and outcomes after acute brain injury.">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141514" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html" title="Home">Vedant Kansara</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="page">
+    <h1>Research</h1>
+    <p class="tagline">Some of my current and recent research projects.</p>
+  </header>
+
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <!-- Paper cards are generated from the list in research.js.
+         To add, edit, or remove a paper, edit that file only. -->
+    <div class="paper-list" id="paper-list"></div>
+
+    <p class="scholar-note">A full list of publications can be found on <a href="https://scholar.google.com/citations?user=BvTiZXMAAAAJ&hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a>.</p>
+  </section>
+
+  <dialog id="paper-dialog" aria-labelledby="pd-title">
+    <div class="pd-inner">
+      <button class="pd-close" type="button" aria-label="Close">×</button>
+      <div class="pd-fig" id="pd-fig"></div>
+      <p class="pd-venue" id="pd-venue"></p>
+      <h3 id="pd-title"></h3>
+      <p class="pd-authors" id="pd-authors"></p>
+      <div class="pd-body" id="pd-body"></div>
+      <div class="pd-actions" id="pd-actions"></div>
+    </div>
+  </dialog>
+
+
+
+
+  <footer>
+    <span>© <span id="year">2026</span> Vedant Kansara</span>
+    <span>vkansara at psu dot edu</span>
+  </footer>
+
+</div>
+
+<script src="theme.js"></script>
+<script src="research.js"></script>
+</body>
+</html>
