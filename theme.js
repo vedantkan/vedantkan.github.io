@@ -43,3 +43,28 @@
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Glide-in: reveal content as it enters the screen, staggered top to bottom */
+(function () {
+  var root = document.documentElement;
+  if (!root.classList.contains('anim')) return;
+  var SEL = '.landing-text>*,.portrait,header.page>*,section>h2,.intro>p,.entry,.paper-row,.scholar-note,footer';
+  function start() {
+    root.classList.add('rv-ready');
+    var els = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var batch = 0, timer = null;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        el.style.setProperty('--d', Math.min(batch++ * 70, 560) + 'ms');
+        requestAnimationFrame(function () { el.classList.add('in'); });
+        io.unobserve(el);
+      });
+      clearTimeout(timer); timer = setTimeout(function () { batch = 0; }, 120);
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
